@@ -1,7 +1,6 @@
-const canvas = document.querySelector('#scroll-canvas');
+const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
-
-const input = document.querySelector('#upload-photos');
+const input = document.querySelector('input');
 
 const base_url = 'http://www.brightdatasci.com/bonsai/images/acer_';
 let number_of_images = 32;
@@ -29,18 +28,19 @@ function loadImages() {
 function handleMove(e) {
   const x = e.offsetX || e.touches[0].clientX;
 
-  if (prev_x > x) {
-    current_image = (current_image + 1) % number_of_images;
-  } else {
-    current_image = (current_image - 1 + number_of_images) % number_of_images;
+  if (Math.abs(prev_x - x) > Math.round(32 / number_of_images)) {
+    if (prev_x > x) {
+      current_image = (current_image + 1) % number_of_images;
+    } else {
+      current_image = (current_image - 1 + number_of_images) % number_of_images;
+    }
+  
+    if (e.buttons === undefined || e.buttons === 1) {
+      ctx.drawImage(images[current_image], 0, 0);
+    }
+  
+    prev_x = x;
   }
-
-  if (e.buttons === undefined || e.buttons === 1) {
-    console.log(images[current_image], number_of_images);
-    ctx.drawImage(images[current_image], 0, 0);
-  }
-
-  prev_x = x;
 }
 
 function handleInput() {
@@ -63,9 +63,9 @@ function handleInput() {
 }
 
 function initializeListeners() {
-  canvas.addEventListener('mousemove', handleMove);
-  canvas.addEventListener('touchmove', handleMove);
-  input.addEventListener('change', handleInput);
+  canvas.onmousemove = handleMove;
+  canvas.ontouchmove = handleMove;
+  input.onchange = handleInput;
 }
 
 let images = loadImages();

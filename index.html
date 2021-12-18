@@ -9,9 +9,39 @@
   </head>
   <body>
     <main>
-      <section>
-        <canvas id="scroll-canvas"></canvas>
-        <input type="file" accept="image/*" multiple id="upload-photos" />
+      <h1>Bonsai 360</h1>
+      <br />
+      <br />
+      <!-- canvas -->
+      <canvas></canvas>
+      <br />
+      <br />
+      <!-- cards -->
+      <section class="cards">
+        <div class="card">
+          <h1>📸</h1>
+          <h3>1. Shoot your pictures</h3>
+          Keep your camera stable and rotate your tree to take at least 8
+          pictures around it at even intervals, starting and ending on the same
+          position.
+        </div>
+        <div class="card">
+          <h1>🎞️</h1>
+          <h3>2. Upload the images</h3>
+          Upload the pictures you took. Select them in the order they were
+          taken.
+          <br />
+          <br />
+          <button
+            >Upload
+            <input type="file" accept="image/*" multiple />
+          </button>
+        </div>
+        <div class="card">
+          <h1>🌳</h1>
+          <h3>3. Voilà</h3>Interact with your 360 image above. Use mouse or
+          touch to rotate it left and right.
+        </div>
       </section>
     </main>
   </body>
