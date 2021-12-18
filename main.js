@@ -11,8 +11,9 @@ let prev_x = 0;
 function loadImages() {
   const images = [];
   for (let i = 1; i <= number_of_images; i++) {
+    let j = number_of_images - i + 1;
     images.push(new Image());
-    images[i - 1].src = base_url + i + '.png';
+    images[i - 1].src = base_url + j + '.png';
   }
 
   // set canvas initial image

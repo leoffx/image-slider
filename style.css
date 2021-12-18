@@ -89,6 +89,13 @@ input {
   cursor: pointer;
 }
 
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 @media screen and (min-width: 1200px) {
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
