@@ -15,9 +15,11 @@ body {
   font-family: 'Open Sans';
 }
 
-h1, h2, h3 {
-  font-family: "Noto Serif";
-  color: rgba(0,0,0,.9);
+h1,
+h2,
+h3 {
+  font-family: 'Noto Serif';
+  color: rgba(0, 0, 0, 0.9);
 }
 
 main {
@@ -53,7 +55,7 @@ section {
   padding: calc(var(--gap) * 2) var(--gap);
   background-color: var(--card-bg);
   border-radius: var(--border-radius);
-  color: rgba(0,0,0,.6);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .card > h1 {
@@ -62,10 +64,11 @@ section {
 }
 
 button {
+  cursor: pointer;
   position: relative;
-  font: bold 14px/24px "open sans";
+  font: bold 14px/24px 'open sans';
   border: none;
-  background-color: rgb(60,175,100);
+  background-color: rgb(60, 175, 100);
   line-height: 1.5;
   color: white;
   height: max-content;
@@ -81,13 +84,9 @@ button {
 }
 
 input {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  pointer-events: none;
   opacity: 0;
-  cursor: pointer;  
+  cursor: pointer;
 }
 
 @media screen and (min-width: 1200px) {

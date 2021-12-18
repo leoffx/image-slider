@@ -2,8 +2,8 @@ const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 const input = document.querySelector('input');
 
-const base_url = 'http://www.brightdatasci.com/bonsai/images/acer_';
-let number_of_images = 32;
+const base_url = 'assets/bonsai-';
+let number_of_images = 23;
 
 let current_image = 0;
 let prev_x = 0;
@@ -12,7 +12,7 @@ function loadImages() {
   const images = [];
   for (let i = 1; i <= number_of_images; i++) {
     images.push(new Image());
-    images[i - 1].src = base_url + i + '.jpg';
+    images[i - 1].src = base_url + i + '.png';
   }
 
   // set canvas initial image
@@ -34,11 +34,11 @@ function handleMove(e) {
     } else {
       current_image = (current_image - 1 + number_of_images) % number_of_images;
     }
-  
+
     if (e.buttons === undefined || e.buttons === 1) {
       ctx.drawImage(images[current_image], 0, 0);
     }
-  
+
     prev_x = x;
   }
 }
